@@ -105,3 +105,36 @@ DOWNLOADER_MIDDLEWARES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+
+# 日志设置
+# 是否启用日志
+LOG_ENABLED=True
+
+# 日志使用的编码
+LOG_ENCODING='utf-8'
+
+
+
+# 日志格式
+LOG_FORMAT='%(asctime)s [%(name)s] %(levelname)s: %(message)s'
+
+# 日志时间格式
+LOG_DATEFORMAT='%Y-%m-%d %H:%M:%S'
+
+# 日志级别 CRITICAL, ERROR, WARNING, INFO, DEBUG
+LOG_LEVEL='DEBUG'
+
+# 如果等于True，所有的标准输出（包括错误）都会重定向到日志，例如：print('hello')
+LOG_STDOUT=False
+
+# 如果等于True，日志仅仅包含根路径，False显示日志输出组件
+LOG_SHORT_NAMES=False
+
+# 日志文件(文件名)
+from datetime import datetime
+to_day = datetime.now()
+log_file_path = 'scrapyTest/log/scrapy_{}_{}_{}.log'.format(to_day.year, to_day.month, to_day.day)
+with open(log_file_path, 'w') as f:
+    f.write('')
+    print('log open')
+LOG_FILE = log_file_path
